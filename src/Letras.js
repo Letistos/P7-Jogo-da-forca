@@ -2,7 +2,7 @@ export default function Letras(){
     return(
 
     <div class="letter">
-        <button class="font">A</button>
+        <button data-test="letter" class="font">A</button>
         <button class="font">B</button>
         <button class="font">C</button>
         <button class="font">D</button>
