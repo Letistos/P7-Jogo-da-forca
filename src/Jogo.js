@@ -12,17 +12,31 @@ import { useState } from 'react'
 
 const images = [forca0, forca1, forca2, forca3, forca4, forca5, forca6];
 
+
 export default function Jogo() {
     let [error, setError] = useState(0)
+    let [sortedWord, setSortedWord] = useState([]) ;
+    let [gameWord,setGameWord] = useState([]);
 
-    function startGame() {
+    function startGame() {""
         setError(0);
         sortWord()
     }
     
     function sortWord(){
     const i = Math.floor(Math.random() * palavras.length);
-    console.log(palavras[i])
+    let word = palavras[i]
+    let wordArray = word.split("")
+
+    setSortedWord(wordArray)
+
+    console.log(word)
+    console.log(wordArray)
+
+    let blank = [];
+    wordArray.forEach(() => blank.push("_"))
+    setGameWord(blank)
+    console.log(gameWord)
     }
     
     return(
@@ -34,7 +48,7 @@ export default function Jogo() {
                 
                 <button data-test="choose-word" className="font" onClick={startGame}>Escolher Palavra</button>
                 
-                <div data-test="word" className="font escondido">_ _ abcuae_ _ _ _ _ _</div>
+                <div data-test="word" className="font">{gameWord}</div>
             </div>
 
         </div>

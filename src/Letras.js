@@ -6,7 +6,7 @@ export default function Letras(props) {
     return (
 
         <div className="letter">
-            {alfabeto.map((props) => (<button key={props[i]}  disabled  data-test="letter" className="font">{props[i].toUpperCase()}</button>))}
+            {alfabeto.map((props) => (<button key={props[i]}  disabled={true}  data-test="letter" className="font">{props[i].toUpperCase()}</button>))}
         </div>
 
     );
