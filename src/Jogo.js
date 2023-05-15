@@ -14,11 +14,13 @@ const images = [forca0, forca1, forca2, forca3, forca4, forca5, forca6];
 
 
 export default function Jogo() {
+
     let [error, setError] = useState(0)
     let [sortedWord, setSortedWord] = useState([]) ;
     let [gameWord,setGameWord] = useState([]);
+    
 
-    function startGame() {""
+    function startGame() {
         setError(0);
         sortWord()
     }
@@ -30,14 +32,12 @@ export default function Jogo() {
 
     setSortedWord(wordArray)
 
-    console.log(word)
-    console.log(wordArray)
-
     let blank = [];
     wordArray.forEach(() => blank.push("_"))
     setGameWord(blank)
-    console.log(gameWord)
+    console.log(sortedWord)
     }
+  
     
     return(
         <div className="main">

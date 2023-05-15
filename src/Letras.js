@@ -1,15 +1,40 @@
+import { useState } from 'react';
 import alfabeto from './alfabeto';
 
+
+
 export default function Letras(props) {
+
+  
+
     let i = 0;
-    
+
+    let [clickedButton, setClickedButton]= useState([]);
+
+    function letterUsed(props){
+        setClickedButton([...clickedButton,props])
+    }      
+   
     return (
+       
 
         <div className="letter">
-            {alfabeto.map((props) => (<button key={props[i]}  disabled={true}  data-test="letter" className="font">{props[i].toUpperCase()}</button>))}
+            {alfabeto.map((props) => (
+            <button key={props[i]} 
+             disabled={clickedButton.includes(props)}
+             data-test="letter" 
+             className="font" 
+             onClick ={() =>letterUsed(props)}
+             >
+            {props[i].toUpperCase()}
+            </button>))}
+
         </div>
 
     );
+  
+   
+
 }
 
 
