@@ -1,15 +1,10 @@
-import { useState } from 'react';
+
 import alfabeto from './alfabeto';
 
+export default function Letras({props,setClickedButton,clickedButton}) {
+    
 
-
-export default function Letras(props) {
-
-  
-
-    let i = 0;
-
-    let [clickedButton, setClickedButton]= useState([]);
+    let i = 0;   
 
     function letterUsed(props){
         setClickedButton([...clickedButton,props])

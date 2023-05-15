@@ -8,20 +8,16 @@ import forca6 from './assets/forca6.png'
 
 import palavras from './palavras'
 
-import { useState } from 'react'
 
 const images = [forca0, forca1, forca2, forca3, forca4, forca5, forca6];
 
 
-export default function Jogo() {
-
-    let [error, setError] = useState(0)
-    let [sortedWord, setSortedWord] = useState([]) ;
-    let [gameWord,setGameWord] = useState([]);
+export default function Jogo({setClickedButton,setError,setGameWord,error,gameWord,setSortedWord,sortedWord}) {  
     
 
     function startGame() {
         setError(0);
+        setClickedButton([])
         sortWord()
     }
     
