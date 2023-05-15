@@ -1,3 +1,4 @@
+
 import forca0 from './assets/forca0.png'
 import forca1 from './assets/forca1.png'
 import forca2 from './assets/forca2.png'
@@ -12,14 +13,16 @@ import palavras from './palavras'
 const images = [forca0, forca1, forca2, forca3, forca4, forca5, forca6];
 
 
-export default function Jogo({setClickedButton,setError,setGameWord,error,gameWord,setSortedWord,sortedWord}) {  
+export default function Jogo({setClickedButton,setError,setGameWord,error,gameWord,setSortedWord,sortedWord,color,setColor}) {  
     
 
     function startGame() {
         setError(0);
+        setColor('start')
         setClickedButton([])
         sortWord()
     }
+   
     
     function sortWord(){
     const i = Math.floor(Math.random() * palavras.length);
@@ -27,6 +30,7 @@ export default function Jogo({setClickedButton,setError,setGameWord,error,gameWo
     let wordArray = word.split("")
 
     setSortedWord(wordArray)
+    console.log(wordArray)
 
     let blank = [];
     wordArray.forEach(() => blank.push("_"))
@@ -44,7 +48,7 @@ export default function Jogo({setClickedButton,setError,setGameWord,error,gameWo
                 
                 <button data-test="choose-word" className="font" onClick={startGame}>Escolher Palavra</button>
                 
-                <div data-test="word" className="font">{gameWord}</div>
+                <div data-test="word" className={color}>{gameWord}</div>
             </div>
 
         </div>

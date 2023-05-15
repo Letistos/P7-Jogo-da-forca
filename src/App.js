@@ -12,7 +12,8 @@ export default function App() {
     let [error, setError] = useState(0)
     let [sortedWord, setSortedWord] = useState([]) ;
     let [gameWord,setGameWord] = useState([]);
-    
+    let [color,setColor]=useState("start");
+
     return (
 
         <div className="app">
@@ -25,11 +26,22 @@ export default function App() {
             gameWord={gameWord}
             setSortedWord={setSortedWord} 
             sortedWord={sortedWord}
+            color={color}
+            setColor={setColor}
+            
+            
             />
 
             <Letras 
             clickedButton={clickedButton} 
             setClickedButton={setClickedButton}
+            sortedWord={sortedWord}
+            error={error}
+            setError={setError}
+            gameWord={gameWord}
+            setGameWord={setGameWord}
+            setColor={setColor}
+            color={color}
             />
 
         </div>

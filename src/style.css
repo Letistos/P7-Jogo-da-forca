@@ -94,6 +94,26 @@ div.font{
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.escondido{
-    display: none;
+.green{
+   color:#27AE60; 
+   text-align: center;
+    font-family: 'Encode Sans', sans-serif;
+    font-weight:700;
+    font-size:50px;
+    line-height:68.1px;
+}.red{
+    color:#FF0000;
+    text-align: center;
+    font-family: 'Encode Sans', sans-serif;
+    font-weight:700;
+    font-size:50px;
+    line-height:68.1px;
+}
+.start{
+    color:#000000;
+    text-align: center;
+    font-family: 'Encode Sans', sans-serif;
+    font-weight:700;
+    font-size:50px;
+    line-height:68.1px;
 }
